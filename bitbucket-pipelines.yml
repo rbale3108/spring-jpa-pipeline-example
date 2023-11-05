@@ -1,0 +1,15 @@
+options:
+  docker: true
+
+image: docker:latest
+pipelines:
+  custom:
+    build:
+      - step:
+          image: maven:3.8.3-jdk-11-openj9
+          name: Build
+          script:
+            - mvn clean install -DskiptTests
+          artifacts:
+            paths:
+              - target/*.jar
