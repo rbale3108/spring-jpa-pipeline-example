@@ -2,6 +2,10 @@ pipeline{
     agent{
         label "slave-2"
     }
+    tools{
+        jdk 'Java17'
+        maven 'maven3'
+    }
     stages{
         stage("Clean Workspace"){
             steps{
