@@ -42,24 +42,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.johnzon</groupId>
-			<artifactId>johnzon-core</artifactId>
-			<version>1.2.19</version>
-		</dependency>
-		<!--Apache Commons Lang3-->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.12.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections4</artifactId>
-			<version>4.4</version>
-		</dependency>
 	</dependencies>
-
 
 	<build>
 		<plugins>
@@ -67,25 +50,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<annotationProcessorPaths>
-						<path>
+					<excludes>
+						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-							<version>${org.projectlombok.version}</version>
-						</path>
-						<!-- This is needed when using Lombok 1.18.16 and above -->
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok-mapstruct-binding</artifactId>
-							<version>0.2.0</version>
-						</path>
-						<!-- Mapstruct should follow the lombok path(s) -->
-						<path>
-							<groupId>org.mapstruct</groupId>
-							<artifactId>mapstruct-processor</artifactId>
-							<version>${org.mapstruct.version}</version>
-						</path>
-					</annotationProcessorPaths>
+						</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>
