@@ -52,6 +52,7 @@
 				<configuration>
 					<excludes>
 						<exclude>
+							<propertiesEncoding>UTF-8</propertiesEncoding>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
